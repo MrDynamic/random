@@ -28,7 +28,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
        <li>
-           &nbsp;
+           <?php echo anchor('https://github.com/MrDynamic/random','Source Code'); ?>
        </li>
       </ul>
     </div><!-- /.navbar-collapse -->
