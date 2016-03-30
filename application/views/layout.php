@@ -41,7 +41,7 @@
             <div class="space15"></div>
                 <?php
 
-                $action = 'index.php/random/save';
+                $action = 'index.php/share/save';
                 $selectType = array('class'=>'form-control','id'=>'groupName','required'=>'');
                 
                 echo form_open($action);
