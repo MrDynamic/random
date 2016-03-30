@@ -43,12 +43,12 @@
 
                 $action = 'index.php/share/save';
                 $selectType = array('class'=>'form-control','id'=>'groupName','required'=>'');
-                
-                echo form_open($action);
-                echo create_dropdown(array('Group Name','groupName'),'groupName',$groupItems,$selectType);
-                echo form_button(array('type'=>'submit','class'=>'btn btn-primary','content'=>'Random'));
-                echo form_close();
-
+                if(count($groupItems) > 0){
+                  echo form_open($action);
+                  echo create_dropdown(array('Group Name','groupName'),'groupName',$groupItems,$selectType);
+                  echo form_button(array('type'=>'submit','class'=>'btn btn-primary','content'=>'Random'));
+                  echo form_close();
+                }
                 ?>
             </div>
         </div>
@@ -105,3 +105,4 @@
 </body>
 </html>
 
+	
