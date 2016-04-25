@@ -11,8 +11,9 @@
   </style>
 </head>
 <body>
-<nav class="navbar navbar-inverse">
-  <div class="container">
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
@@ -20,16 +21,45 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      &nbsp;
-     
+      <a class="navbar-brand" href="#">Brand</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
       <ul class="nav navbar-nav navbar-right">
-       <li>
-           <?php echo anchor('https://github.com/MrDynamic/random','Source Code'); ?>
-       </li>
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -38,62 +68,23 @@
     <div class="row">
         <div class="col-md-offset-3 col-md-6">
             <div class="adv-table">
-            <div class="space15"></div>
-                <?php
-
-                $action = 'index.php/share/save';
-                $selectType = array('class'=>'form-control','id'=>'groupName','required'=>'');
-                if(count($groupItems) > 0){
-                  echo form_open($action);
-                  echo create_dropdown(array('Group Name','groupName'),'groupName',$groupItems,$selectType);
-                  echo form_button(array('type'=>'submit','class'=>'btn btn-primary','content'=>'Random'));
-                  echo form_close();
-                }
-                ?>
-            </div>
-        </div>
+            <div class="space15"></div>       
+		</div>
     </div>
-    <div class="row">
-        <div class="col-md-offset-3 col-md-6">
-            <div class="adv-table">
-            <div class="space15"></div>
-                <?php
-                  (isset($randomNumber) && !empty($randomNumber))? print "<h3 style='color:red'>Random number is => $randomNumber</h3>":'';
-                ?>
-            </div>
-        </div>
-    </div>
+</div>
+<div class="row">
+	<div class="col-md-offset-3 col-md-6">
+		<div class="adv-table">
+		<div class="space15"></div>
+			
+		</div>
+	</div>
+</div>
    <div class="row">
      <div class="col-md-offset-3 col-md-6">
            <div class="adv-table">
                   <div class="space15" style="margin:50px !important;"></div>
-                  <h4>&#3617;&#3634;&#3585;&#3585;&#3623;&#3656;&#3634;&#3652;&#3604;&#3657;&#3585;&#3656;&#3629;&#3609;</h4>
-                  <table class="table table-striped table-hover table-bordered">
-                      <thead>
-                          <tr>
-                              <th>No.</th>
-                              <th>Group</th>
-                              <th>Number</th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                      <?php
-                          if(!isset($list)|| empty($list)) { 
-                            echo "<tr><td colspan=3>Data Not Found !!</td></tr>";
-                          } else{
-                            $i=1;
-                            foreach ($list as $rows){
-                              echo "<tr class=''>";
-                              echo "<td>$i</td>";
-                              echo "<td>$rows->groupName</td>";
-                              echo "<td>$rows->randomNumber</td>";
-                              echo "</tr>";
-                              $i++;
-                            }
-                          }
-                      ?>
-                      </tbody>
-                  </table>
+                  
               </div>
             </div>
        </div>
@@ -104,5 +95,3 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </body>
 </html>
-
-	
