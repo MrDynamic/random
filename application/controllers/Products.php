@@ -15,7 +15,7 @@ class Products extends CI_Controller
 		$this->load->view('products/index', $data);
 	}
 	
-	function buy($id){
+	function buy(){
 		//Set variables for paypal form
 		$paypalURL = 'https://www.sandbox.paypal.com/cgi-bin/webscr'; //test PayPal api url
 		$paypalID = 'polawat.th-facilitator@gmail.com';
