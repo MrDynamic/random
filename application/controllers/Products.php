@@ -4,15 +4,15 @@ class Products extends CI_Controller
 	function  __construct() {
 		parent::__construct();
 		$this->load->library('paypal_lib');
-		$this->load->model('product');
 	}
 	
 	function index(){
-		$data = array();
+		// $data = array();
 		//get products data from database
-        $data['products'] = $this->product->getRows();
+        // $data['products'] = $this->product->getRows();
 		//pass the products data to view
-		$this->load->view('products/index', $data);
+		// $this->load->view('products/index', $data);
+		echo 'product';
 	}
 	
 	function buy(){
